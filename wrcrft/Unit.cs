@@ -22,7 +22,31 @@ namespace wrcrft
             Damage = damage;
         }
 
+        public int Health
+        {
+            get { return RealHealthPoint; }
+            set
+            {
+                RealHealthPoint = value;
+
+                if (RealHealthPoint < FullHealthPoint * 0.25)
+                {
+                    DiminutionHealthEvent?.Invoke();
+                    
+                }
+            }
+        }
+
+        public void TakeDamage(int damage)
+        {
+            Health -= damage;
+        }
+
+        public delegate void DiminutionHealtDelegate();
+
         public abstract void Attack(Unit unit);
+
+        public event DiminutionHealtDelegate DiminutionHealthEvent;
     }
 
 }
