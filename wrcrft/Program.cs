@@ -13,7 +13,7 @@ namespace wrcrft
 
             Console.WriteLine($"Полное здоровье footMan: {footMan.FullHealthPoint}");
             Console.WriteLine($"Полное здоровье targetFootMan: {targetFootMan.FullHealthPoint}");
-            Console.WriteLine($"Количество маны у mage: {mage.Mane} \n");
+            Console.WriteLine($"Количество маны у mage: {mage.Mane}");
             while (targetFootMan.RealHealthPoint > 0 && footMan.RealHealthPoint > 0)
             {
                 targetFootMan.Attack(footMan);

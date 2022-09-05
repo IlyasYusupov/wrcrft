@@ -15,6 +15,7 @@ namespace wrcrft
         {
             HealSkill = 7;
             Mane = 45;
+            this.DiminutionHealthEvent += selfHeal;
         }
 
         public override int Damage { get; set; }
@@ -40,11 +41,6 @@ namespace wrcrft
         {
             if (targetUnit.RealHealthPoint > 0 && RealHealthPoint > 0)
             {
-                if (RealHealthPoint <= FullHealthPoint * 0.25) // Самолечение mage
-                {
-                    targetHeal(this);
-                }
-
                 targetUnit.RealHealthPoint -= Damage;
 
                 if (targetUnit.RealHealthPoint < 0)
@@ -52,6 +48,11 @@ namespace wrcrft
                     targetUnit.RealHealthPoint = 0;
                 }
             }
+        }
+
+        public void selfHeal()
+        {
+            targetHeal(this);
         }
     }
 }
