@@ -24,7 +24,7 @@ namespace wrcrft
             {
                 if (ArrowCount > 0)
                 {
-                    targetUnit.RealHealthPoint -= Damage;
+                    targetUnit.TakeDamage(Damage);
                     ArrowCount -= 1;
                 }
 

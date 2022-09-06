@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace wrcrft
 {
-    public class BlackSmith
+    public static class Map
     {
-        public void UpgradeDamage();
-
-        public void UpgradeArmor();
-
-        public void UpgradeBow();
-
+        public static List <Unit> Units = new List<Unit>();
     }
 }

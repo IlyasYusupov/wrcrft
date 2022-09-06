@@ -41,7 +41,7 @@ namespace wrcrft
         {
             if (targetUnit.RealHealthPoint > 0 && RealHealthPoint > 0)
             {
-                targetUnit.RealHealthPoint -= Damage;
+                targetUnit.TakeDamage(Damage);
 
                 if (targetUnit.RealHealthPoint < 0)
                 {
@@ -50,9 +50,6 @@ namespace wrcrft
             }
         }
 
-        public void selfHeal()
-        {
-            targetHeal(this);
-        }
+        public void selfHeal() => targetHeal(this);
     }
 }

@@ -21,7 +21,7 @@ namespace wrcrft
         {
             if (targetUnit.RealHealthPoint > 0 && RealHealthPoint > 0)
             {
-                targetUnit.RealHealthPoint -= Damage;
+                targetUnit.TakeDamage(Damage);
 
                 if (targetUnit.RealHealthPoint < 0)
                 {

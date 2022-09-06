@@ -19,7 +19,7 @@ namespace wrcrft
             if (targetUnit.RealHealthPoint > 0 && RealHealthPoint > 0) 
             {
 
-                targetUnit.TakeDamage(Damage);
+                
 
                 if (targetUnit.RealHealthPoint < 0)
                 {
@@ -28,9 +28,6 @@ namespace wrcrft
             }
         }
 
-        public void Rage()
-        {
-            Damage += (int)(Damage * 0.25);
-        }
+        public void Rage() => Damage += (int)(Damage * 0.25);
     }
 }

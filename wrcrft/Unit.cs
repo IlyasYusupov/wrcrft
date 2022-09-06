@@ -20,6 +20,7 @@ namespace wrcrft
             RealHealthPoint = HP;
             Coast = coast;
             Damage = damage;
+            Map.Units.Add(this);
         }
 
         public int Health
@@ -27,20 +28,16 @@ namespace wrcrft
             get { return RealHealthPoint; }
             set
             {
-                RealHealthPoint = value;
+                RealHealthPoint = Health;
 
                 if (RealHealthPoint < FullHealthPoint * 0.25)
                 {
                     DiminutionHealthEvent?.Invoke();
-                    
                 }
             }
         }
 
-        public void TakeDamage(int damage)
-        {
-            Health -= damage;
-        }
+        public void TakeDamage(int damage) => Health -= damage;
 
         public delegate void DiminutionHealtDelegate();
 
