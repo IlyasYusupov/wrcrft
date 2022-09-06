@@ -28,7 +28,7 @@ namespace wrcrft
             get { return RealHealthPoint; }
             set
             {
-                RealHealthPoint = Health;
+                RealHealthPoint = value;
 
                 if (RealHealthPoint < FullHealthPoint * 0.25)
                 {

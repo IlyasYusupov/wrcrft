@@ -8,11 +8,14 @@ namespace wrcrft
 {
     public class BlackSmith
     {
-        public void UpgradeDamage();
+        public void UpgradeDamage()
+        { }
 
-        public void UpgradeArmor();
+        public void UpgradeArmor()
+        { }
 
-        public void UpgradeBow();
+        public void UpgradeBow()
+        { }
 
     }
 }

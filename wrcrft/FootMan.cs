@@ -10,16 +10,25 @@ namespace wrcrft
     {
         public int Armor;
         public FootMan() : base(60, 15, 11)
-        { this.DiminutionHealthEvent += Rage; }
+        {
+            Armor = 7;
+            this.DiminutionHealthEvent += Rage; 
+        }
         
         public override int Damage {get; set;}
+
+        public int DamageReduction(int damage)
+        {
+            damage = (int)(damage * Armor * 0.1);
+            return damage;
+        }
 
         public override void Attack(Unit targetUnit)
         {
             if (targetUnit.RealHealthPoint > 0 && RealHealthPoint > 0) 
             {
 
-                
+                targetUnit.TakeDamage(DamageReduction(Damage));
 
                 if (targetUnit.RealHealthPoint < 0)
                 {
