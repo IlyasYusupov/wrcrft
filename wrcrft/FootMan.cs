@@ -14,7 +14,8 @@ namespace wrcrft
             Armor = 7;
             this.DiminutionHealthEvent += Rage; 
             
-            Damage = LvlDicDamage.1;
+            Damage += Damage * LvlDictDamage[DamageLVL] / 100;
+            Armor += Armor * LvlDictArmor[DamageLVL] / 10;
         }
         
         public override int Damage {get; set;}
@@ -40,22 +41,5 @@ namespace wrcrft
         }
 
         public void Rage() => Damage += (int)(Damage * 0.25);
-
-        public void UpgradeDamage()
-        {
-            if (DamageLVL < 3)
-            {
-                DamageLVL++;
-                Damage += 5;
-            }
-        }
-        public void UpgradeArmor()
-        {
-            if (ArmorLVL < 3)
-            {
-                ArmorLVL++;
-                Armor += 3;
-            }
-        }
     }
 }

@@ -11,8 +11,12 @@ namespace wrcrft
         public int FullHealthPoint;
         public int RealHealthPoint;
         public int Coast;
+        public int DamageLVL;
+        public int ArmorLVL;
+        public int BowLVL;
+        public int Armor;
 
-        public Dictionary<int, int> LvlDicDamage = new Dictionary<int, int>()
+        public Dictionary<int, int> LvlDictDamage = new Dictionary<int, int>()
         {
             {0, 0},
             {1, 20},
@@ -20,7 +24,7 @@ namespace wrcrft
             {3, 50}
         };
 
-        public Dictionary<int, int> LvlDicArmor = new Dictionary<int, int>()
+        public Dictionary<int, int> LvlDictArmor = new Dictionary<int, int>()
         {
             {0, 0},
             {1, 30},
@@ -28,7 +32,7 @@ namespace wrcrft
             {3, 60}
         };
 
-        public Dictionary<int, int> LvlDicBow = new Dictionary<int, int>()
+        public Dictionary<int, int> LvlDictBow = new Dictionary<int, int>()
         {
             {0, 0},
             {1, 20},
@@ -44,7 +48,9 @@ namespace wrcrft
             RealHealthPoint = HP;
             Coast = coast;
             Damage = damage;
-            Map.Units.Add(this);
+            this.DamageLVL = DamageLVL;
+            this.ArmorLVL = ArmorLVL;
+            this.BowLVL = BowLVL;
         }
 
         public int Health

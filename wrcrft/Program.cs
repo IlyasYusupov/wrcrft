@@ -6,19 +6,20 @@ namespace wrcrft
     {
         static void Main()
         {
-            //UnitMaker unit = new UnitMaker();
+            UnitMaker unitMaker = new UnitMaker();
+            Unit footMan = unitMaker.Make("footMan");
+            Unit targetFootMan = unitMaker.Make("footMan");
+            Mage mage = unitMaker.MagicMake();
 
-            //Unit footman = unit.Make("footMan");
-
-
-            FootMan footMan = new FootMan();
-            FootMan targetFootMan = new FootMan();
-            Mage mage = new Mage();
-            Peasent peasent = new Peasent();
+            BlackSmith smith = new BlackSmith(unitMaker);
+            smith.UpgradeDamage();
+            smith.UpgradeDamage();
+            smith.UpgradeArmor();
+            smith.UpgradeArmor();
 
             Console.WriteLine($"Полное здоровье footMan: {footMan.FullHealthPoint}");
             Console.WriteLine($"Полное здоровье targetFootMan: {targetFootMan.FullHealthPoint}");
-            Console.WriteLine($"Количество маны у mage: {mage.Mane}");
+            Console.WriteLine($"Количество маны у mage: {mage.Mane} \n");
             while (targetFootMan.RealHealthPoint > 0 && footMan.RealHealthPoint > 0)
             {
                 targetFootMan.Attack(footMan);

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace wrcrft
 {
@@ -13,6 +14,7 @@ namespace wrcrft
         public int DamageLVL = 0;
         public int ArmorLVL = 0;
         public int BowLVL = 0;
+        public static List<Unit> Units = new List<Unit>();
 
         public Unit Make(string name)
         {
@@ -27,18 +29,37 @@ namespace wrcrft
                     unit = new Archer(DamageLVL, ArmorLVL, BowLVL);
                     break;
                 case "peasent":
-                    unit = new Peasent(DamageLVL, ArmorLVL, BowLVL); ;
+                    unit = new Peasent(DamageLVL, ArmorLVL, BowLVL);
                     break;
                 default:
                     throw new Exception("Unknown unit");
             }
+            Units.Add(unit);
             return unit;
         }
 
-        public Mage MagicMake(string name)
+        public Mage MagicMake()
         {
             Mage mage = new Mage(DamageLVL, ArmorLVL, BowLVL);
+            Units.Add(mage);
             return mage;
+        }
+
+        public void CheckingUpdate()
+        {
+            foreach(var i in Units)
+            {            
+                if (i.DamageLVL != DamageLVL)
+                {
+                    i.Damage += i.Damage * i.LvlDictDamage[DamageLVL] / 100;
+                    i.DamageLVL++;
+                }
+                if (i.ArmorLVL != ArmorLVL)
+                {
+                    i.Armor += i.Armor * i.LvlDictArmor[ArmorLVL] / 100;
+                    i.ArmorLVL++;
+                }
+            }
         }
 
         public void UpgradeDamage()
@@ -47,6 +68,7 @@ namespace wrcrft
             {
                 DamageLVL++;
             }
+            CheckingUpdate();
         }
 
         public void UpgradeArmor()
@@ -55,6 +77,7 @@ namespace wrcrft
             {
                 ArmorLVL++;
             }
+            CheckingUpdate();
         }
 
         public void UpgradeBow()
