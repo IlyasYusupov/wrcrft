@@ -49,7 +49,7 @@ namespace wrcrft
         {
             foreach(var i in Units)
             {            
-                if (i.DamageLVL != DamageLVL)
+                if (i.DamageLVL != DamageLVL && i.ArrowCount == 0)
                 {
                     i.Damage += i.Damage * i.LvlDictDamage[DamageLVL] / 100;
                     i.DamageLVL++;
@@ -58,6 +58,13 @@ namespace wrcrft
                 {
                     i.Armor += i.Armor * i.LvlDictArmor[ArmorLVL] / 100;
                     i.ArmorLVL++;
+                }
+                if (i.BowLVL != BowLVL && i.ArrowCount != 0)
+                {
+                    i.Damage += i.Damage * i.LvlDictBow[BowLVL] / 100;
+                    i.BowLVL++;
+                    i.ArrowCount += 2;
+                    
                 }
             }
         }
@@ -86,6 +93,7 @@ namespace wrcrft
             {
                 BowLVL++;
             }
+            CheckingUpdate();
         }
     }
 }

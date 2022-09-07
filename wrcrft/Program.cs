@@ -9,13 +9,13 @@ namespace wrcrft
             UnitMaker unitMaker = new UnitMaker();
             Unit footMan = unitMaker.Make("footMan");
             Unit targetFootMan = unitMaker.Make("footMan");
+            Unit Archer = unitMaker.Make("archer");
             Mage mage = unitMaker.MagicMake();
 
             BlackSmith smith = new BlackSmith(unitMaker);
             smith.UpgradeDamage();
-            smith.UpgradeDamage();
             smith.UpgradeArmor();
-            smith.UpgradeArmor();
+
 
             Console.WriteLine($"Полное здоровье footMan: {footMan.FullHealthPoint}");
             Console.WriteLine($"Полное здоровье targetFootMan: {targetFootMan.FullHealthPoint}");

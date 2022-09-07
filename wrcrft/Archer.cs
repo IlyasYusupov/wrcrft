@@ -8,11 +8,10 @@ namespace wrcrft
 {
     public class Archer : Unit
     {
-        public int Armor;
-        public int ArrowCount;
 
         public Archer(int DamageLVL, int ArmorLVL, int BowLVL) : base(45, 10, 9, DamageLVL, ArmorLVL, BowLVL)
         {
+            Armor = 5;
             ArrowCount = 20;
         }
 

@@ -19,7 +19,6 @@ namespace wrcrft
 
             
         }
-
         public override int Damage { get; set; }
 
         public void castFireBall()

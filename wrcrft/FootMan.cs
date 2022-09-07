@@ -8,21 +8,20 @@ namespace wrcrft
 {
     public class FootMan : Unit
     {
-        public int Armor;
         public FootMan(int DamageLVL, int ArmorLVL, int BowLVL) : base(60, 15, 11, DamageLVL, ArmorLVL, BowLVL)
         {
             Armor = 7;
             this.DiminutionHealthEvent += Rage; 
             
             Damage += Damage * LvlDictDamage[DamageLVL] / 100;
-            Armor += Armor * LvlDictArmor[DamageLVL] / 10;
+            Armor += Armor * LvlDictArmor[DamageLVL] / 100;
         }
         
         public override int Damage {get; set;}
 
         public int DamageReduction(int damage)
         {
-            damage = (int)(damage * Armor * 0.1);
+            damage =  (int)(damage - (Armor * 0.7));
             return damage;
         }
 
