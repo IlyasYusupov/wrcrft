@@ -11,11 +11,13 @@ namespace wrcrft
         public int Mane;
         public int HealSkill;
         
-        public Mage() : base(45, 18, 15)
+        public Mage(int DamageLVL, int ArmorLVL, int BowLVL) : base(45, 18, 15, DamageLVL, ArmorLVL, BowLVL)
         {
             HealSkill = 7;
             Mane = 45;
             this.DiminutionHealthEvent += selfHeal;
+
+            
         }
 
         public override int Damage { get; set; }

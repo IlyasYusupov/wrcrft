@@ -9,11 +9,12 @@ namespace wrcrft
     public class FootMan : Unit
     {
         public int Armor;
-        public FootMan() : base(60, 15, 11)
+        public FootMan(int DamageLVL, int ArmorLVL, int BowLVL) : base(60, 15, 11, DamageLVL, ArmorLVL, BowLVL)
         {
             Armor = 7;
             this.DiminutionHealthEvent += Rage; 
             
+            Damage = LvlDicDamage.1;
         }
         
         public override int Damage {get; set;}
@@ -39,7 +40,6 @@ namespace wrcrft
         }
 
         public void Rage() => Damage += (int)(Damage * 0.25);
-
 
         public void UpgradeDamage()
         {

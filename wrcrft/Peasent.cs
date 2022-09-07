@@ -12,7 +12,7 @@ namespace wrcrft
         //public ? Building;
         //public ? Repair;
 
-        public Peasent() : base(35, 5, 4)
+        public Peasent(int DamageLVL, int ArmorLVL, int BowLVL) : base(35, 5, 4, DamageLVL, ArmorLVL, BowLVL)
         { }
 
         public override int Damage { get; set; }

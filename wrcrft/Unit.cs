@@ -12,9 +12,33 @@ namespace wrcrft
         public int RealHealthPoint;
         public int Coast;
 
+        public Dictionary<int, int> LvlDicDamage = new Dictionary<int, int>()
+        {
+            {0, 0},
+            {1, 20},
+            {2, 35},
+            {3, 50}
+        };
+
+        public Dictionary<int, int> LvlDicArmor = new Dictionary<int, int>()
+        {
+            {0, 0},
+            {1, 30},
+            {2, 40},
+            {3, 60}
+        };
+
+        public Dictionary<int, int> LvlDicBow = new Dictionary<int, int>()
+        {
+            {0, 0},
+            {1, 20},
+            {2, 40},
+            {3, 50}
+        };
+
         public abstract int Damage { get; set; }
 
-        public Unit(int HP, int coast, int damage)
+        public Unit(int HP, int coast, int damage, int DamageLVL, int ArmorLVL, int BowLVL)
         {
             FullHealthPoint = HP;
             RealHealthPoint = HP;
@@ -43,13 +67,9 @@ namespace wrcrft
 
         public abstract void Attack(Unit unit);
 
-        //public void Upgrade()
-        //{
-
-        //}
-
-
         public event DiminutionHealtDelegate DiminutionHealthEvent;
+
+
     }
 
 }

@@ -11,7 +11,7 @@ namespace wrcrft
         public int Armor;
         public int ArrowCount;
 
-        public Archer() : base(45, 10, 9)
+        public Archer(int DamageLVL, int ArmorLVL, int BowLVL) : base(45, 10, 9, DamageLVL, ArmorLVL, BowLVL)
         {
             ArrowCount = 20;
         }
