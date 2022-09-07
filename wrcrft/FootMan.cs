@@ -13,6 +13,7 @@ namespace wrcrft
         {
             Armor = 7;
             this.DiminutionHealthEvent += Rage; 
+            
         }
         
         public override int Damage {get; set;}
@@ -38,5 +39,23 @@ namespace wrcrft
         }
 
         public void Rage() => Damage += (int)(Damage * 0.25);
+
+
+        public void UpgradeDamage()
+        {
+            if (DamageLVL < 3)
+            {
+                DamageLVL++;
+                Damage += 5;
+            }
+        }
+        public void UpgradeArmor()
+        {
+            if (ArmorLVL < 3)
+            {
+                ArmorLVL++;
+                Armor += 3;
+            }
+        }
     }
 }

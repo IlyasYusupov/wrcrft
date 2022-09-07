@@ -11,7 +11,7 @@ namespace wrcrft
         public int FullHealthPoint;
         public int RealHealthPoint;
         public int Coast;
-        public int LVL;
+
         public abstract int Damage { get; set; }
 
         public Unit(int HP, int coast, int damage)
@@ -42,6 +42,12 @@ namespace wrcrft
         public delegate void DiminutionHealtDelegate();
 
         public abstract void Attack(Unit unit);
+
+        //public void Upgrade()
+        //{
+
+        //}
+
 
         public event DiminutionHealtDelegate DiminutionHealthEvent;
     }

@@ -6,6 +6,11 @@ namespace wrcrft
     {
         static void Main()
         {
+            //UnitMaker unit = new UnitMaker();
+
+            //Unit footman = unit.Make("footMan");
+
+
             FootMan footMan = new FootMan();
             FootMan targetFootMan = new FootMan();
             Mage mage = new Mage();

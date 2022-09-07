@@ -34,5 +34,13 @@ namespace wrcrft
                 }
             }
         }
+        public void UpgradeBow()
+        {
+            if (BowLVL < 3)
+            {
+                ArrowCount += 2;
+                Damage -= 2;
+            }
+        }
     }
 }
