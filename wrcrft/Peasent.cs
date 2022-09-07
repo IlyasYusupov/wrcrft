@@ -8,11 +8,7 @@ namespace wrcrft
 {
     public class Peasent : Unit
     {
-        public int Mining;
-        //public ? Building;
-        //public ? Repair;
-
-        public Peasent(int DamageLVL, int ArmorLVL, int BowLVL) : base(35, 5, 4, DamageLVL, ArmorLVL, BowLVL)
+        public Peasent(int DamageLVL, int ArmorLVL, int BowLVL) : base(35, 5, 4, DamageLVL, -1, -1)
         { }
 
         public override int Damage { get; set; }
@@ -29,5 +25,13 @@ namespace wrcrft
                 }
             }
         }
+
+        public void Mining()
+        { }
+
+        public void Building()
+        { }
+        public void Repair()
+        { }
     }
 }

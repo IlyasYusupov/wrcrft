@@ -9,7 +9,7 @@ namespace wrcrft
     public class Archer : Unit
     {
 
-        public Archer(int DamageLVL, int ArmorLVL, int BowLVL) : base(45, 10, 9, DamageLVL, ArmorLVL, BowLVL)
+        public Archer(int DamageLVL, int ArmorLVL, int BowLVL) : base(45, 10, 9, -1, ArmorLVL, BowLVL)
         {
             Armor = 5;
             ArrowCount = 20;

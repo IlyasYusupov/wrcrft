@@ -20,6 +20,6 @@ namespace wrcrft
             RealHealthPoint = HP;
             Coast = coast;
         }
-        public abstract void Upgrade();
+        public abstract void UpgradeBuildings();
     }
 }

@@ -49,19 +49,19 @@ namespace wrcrft
         {
             foreach(var i in Units)
             {            
-                if (i.DamageLVL != DamageLVL && i.ArrowCount == 0)
+                if (i.DamageLVL != DamageLVL && i.DamageLVL != -1)
                 {
-                    i.Damage += i.Damage * i.LvlDictDamage[DamageLVL] / 100;
+                    i.Damage += i.Damage * i.DictionaryLvlDamage[DamageLVL] / 100;
                     i.DamageLVL++;
                 }
-                if (i.ArmorLVL != ArmorLVL)
+                if (i.ArmorLVL != ArmorLVL && i.ArmorLVL != -1)
                 {
-                    i.Armor += i.Armor * i.LvlDictArmor[ArmorLVL] / 100;
+                    i.Armor += i.Armor * i.DictionaryLvlArmor[ArmorLVL] / 100;
                     i.ArmorLVL++;
                 }
-                if (i.BowLVL != BowLVL && i.ArrowCount != 0)
+                if (i.BowLVL != BowLVL && i.BowLVL != -1)
                 {
-                    i.Damage += i.Damage * i.LvlDictBow[BowLVL] / 100;
+                    i.Damage += i.Damage * i.DictionaryLvlBow[BowLVL] / 100;
                     i.BowLVL++;
                     i.ArrowCount += 2;
                     
@@ -70,7 +70,7 @@ namespace wrcrft
         }
 
         public void UpgradeDamage()
-        { 
+        {
             if (DamageLVL < 3)
             {
                 DamageLVL++;

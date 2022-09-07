@@ -12,9 +12,15 @@ namespace wrcrft
             Unit Archer = unitMaker.Make("archer");
             Mage mage = unitMaker.MagicMake();
 
+            Console.WriteLine($"Урон footMan: {footMan.Damage}");
+            Console.WriteLine($"Броня footMan: {footMan.Armor}");
+
             BlackSmith smith = new BlackSmith(unitMaker);
             smith.UpgradeDamage();
             smith.UpgradeArmor();
+
+            Console.WriteLine($"Урон footMan после улучшения: {footMan.Damage}");
+            Console.WriteLine($"Броня footMan полсе улучшения: {footMan.Armor} \n");
 
 
             Console.WriteLine($"Полное здоровье footMan: {footMan.FullHealthPoint}");
@@ -30,11 +36,7 @@ namespace wrcrft
 
                 mage.targetHeal(footMan);
                 Console.WriteLine($"Здоровье footMan после лечения: {footMan.RealHealthPoint}");
-                Console.WriteLine($"Оставшеейся количество маны: {mage.Mane}");
-
-                Console.WriteLine();
-
-
+                Console.WriteLine($"Оставшеейся количество маны: {mage.Mane} \n");
             }
             Console.WriteLine("Итог:");
             Console.WriteLine($"Оставшеейся здоровье footMan: {footMan.RealHealthPoint}");

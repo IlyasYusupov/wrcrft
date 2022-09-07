@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace wrcrft
 {
-    public class BlackSmith
+    public class BlackSmith : Buildings
     {
         public UnitMaker unitMaker;
-        public BlackSmith(UnitMaker unit)
+        public BlackSmith(UnitMaker unit) : base(70, 40)
         {
             unitMaker = unit;
         }
@@ -29,5 +29,9 @@ namespace wrcrft
             unitMaker.UpgradeBow();
         }
 
+        public override void Upgrade()
+        {
+            
+        }
     }
 }

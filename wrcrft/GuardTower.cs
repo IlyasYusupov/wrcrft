@@ -12,13 +12,9 @@ namespace wrcrft
         public int Range;
 
         public GuardTower() : base(100,20)
-        {
-            
-        }
+        { }
 
-        public override void Upgrade()
-        {
-
-        }
+        public override void UpgradeBuildings()
+        { }
     }
 }
