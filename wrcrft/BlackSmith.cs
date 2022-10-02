@@ -29,7 +29,7 @@ namespace wrcrft
             unitMaker.UpgradeBow();
         }
 
-        public override void Upgrade()
+        public override void UpgradeBuildings()
         {
             
         }

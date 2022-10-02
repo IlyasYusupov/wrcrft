@@ -12,7 +12,6 @@ namespace wrcrft
         public int FullHealthPoint;
         public int RealHealthPoint;
         public int Coast;
-        public int LVL;
 
         public Buildings(int HP, int coast)
         {

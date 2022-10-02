@@ -53,4 +53,5 @@ namespace wrcrft
 
         public void selfHeal() => targetHeal(this);
     }
+
 }

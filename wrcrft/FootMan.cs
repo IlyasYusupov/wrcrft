@@ -13,6 +13,7 @@ namespace wrcrft
             Armor = 7;
             this.DiminutionHealthEvent += Rage; 
             
+
             Damage += Damage * DictionaryLvlDamage[DamageLVL] / 100;
             Armor += Armor * DictionaryLvlArmor[DamageLVL] / 100;
         }
