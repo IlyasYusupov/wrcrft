@@ -8,6 +8,7 @@ namespace wrcrft
 {
     public abstract class Unit
     {
+        public string Name;
         public int FullHealthPoint;
         public int RealHealthPoint;
         public int Coast;
